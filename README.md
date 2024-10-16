@@ -13,3 +13,11 @@ crontab -u john john-cron-backup.txt
 # Backup all users crontabs
 
 zip -r cronjobs-all.zip /var/spool/cron
+
+# Create the backup (export):
+
+crontab -l > /some/shared/location/crontab.bak
+
+# Import it from the new user:
+
+crontab /some/shared/location/crontab.bak
